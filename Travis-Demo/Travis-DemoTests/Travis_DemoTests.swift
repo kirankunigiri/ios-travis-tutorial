@@ -22,14 +22,14 @@ class Travis_DemoTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let statement = true
+        XCTAssertTrue(statement)
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            testExample()
         }
     }
     
