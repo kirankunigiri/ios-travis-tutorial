@@ -25,14 +25,14 @@ language: objective-c
 osx_image: xcode9
 
 script:
-  - xcodebuild test -destination "platform=iOS Simulator,name=iPhone 7" -sdk iphonesimulator11.0 -project YOUR_PROJECT_DIRECTORY.xcodeproj -scheme YOUR_PROJECT_SCHEME CODE_SIGNING_REQUIRED=NO
+  - xcodebuild test -project YOUR_PROJECT_DIRECTORY.xcodeproj -scheme YOUR_PROJECT_SCHEME -destination "platform=iOS Simulator,name=iPhone 7" -sdk iphonesimulator11.0 CODE_SIGNING_REQUIRED=NO
 ```
 
 First, we specify the language. Type objective-c, even if you're using Swift. Next, we say that we want to run it on Xcode 9.
 
 Finally, we run a script with xcodebuild with the test command using a bunch of parameters. We specify the destination (which simulator to use), the SDK to use, the project directory, and the scheme name.
 
-Replace the words YOUR_PROJECT_DIRECTORY and YOUR_PROJECT_SCHEME with your own.
+Replace the words YOUR_PROJECT_DIRECTORY and YOUR_PROJECT_SCHEME with your own. For example, in this project, we ue use Travis-Demo/Travis-Demo.xcodeproj for the directory, and Travis-Demo as the scheme.
 
 ### 3. Commit and view the results
 Make a commit! The results should show up on the Travis website. If your project didn't build, or any of the unit tests failed, travis will mark your build as failing. Otherwise, you're good to go and it'll say that it passed!
